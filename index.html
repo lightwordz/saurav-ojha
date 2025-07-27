@@ -117,11 +117,11 @@
         body.light-mode .stat-item {
             background: #f0f2f5;
             border: none;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8); /* Neumorphic shadow */
         }
 
         body.light-mode .stat-item:hover {
-            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8);
+            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8); /* Pressed effect */
         }
 
         body.light-mode .stat-label {
@@ -158,11 +158,11 @@
         body.light-mode .skill-card {
             background: #f0f2f5;
             border: none;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8); /* Neumorphic shadow */
         }
 
         body.light-mode .skill-card:hover {
-            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8);
+            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8); /* Pressed effect */
             border-color: transparent;
         }
 
@@ -196,7 +196,7 @@
         body.light-mode .timeline_right {
             background: #f0f2f5;
             border: none;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8); /* Neumorphic shadow */
         }
 
         body.light-mode .timeline_right:hover {
@@ -205,7 +205,7 @@
 
         body.light-mode .timeline_item.visible .timeline_right {
             border: none; /* Remove border */
-            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8);
+            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8); /* Pressed effect */
         }
 
         body.light-mode .timeline_circle {
@@ -330,7 +330,7 @@
             margin-left: 4rem;
             font-weight: 500;
             transition: 0.3s ease;
-            border-bottom: 3px solid transparent;
+            border-bottom: 3px solid #4b8bb7;
         }
 
         nav a:hover,
@@ -379,7 +379,7 @@
         .home-img img {
             width: 25vw;
             border-radius: 50%;
-            box-shadow: 0 0 25px #4b8bb7;
+            box-shadow: none; /* Removed the box-shadow */
             cursor: pointer;
             transition: 0.2s linear;
         }
@@ -535,13 +535,13 @@
             background: rgba(255, 255, 255, 0.05); /* Original transparent background */
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1); /* Original border */
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2); /* Original shadow */
+            box-shadow: none; /* Removed shadow */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .stat-item:hover {
             transform: translateY(-4px); /* Original lift */
-            box-shadow: 0 6px 20px rgba(107, 72, 255, 0.3); /* Original shadow */
+            box-shadow: none; /* Removed shadow */
         }
 
         .stat-number {
@@ -664,12 +664,12 @@
             text-align: left;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1); /* Original border */
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2); /* Original shadow */
+            box-shadow: none; /* Removed shadow */
         }
 
         .skill-card:hover {
             transform: translateY(-4px); /* Original lift */
-            box-shadow: 0 6px 20px rgba(107, 72, 255, 0.3); /* Original glow */
+            box-shadow: none; /* Removed shadow */
             border-color: rgba(255, 215, 0, 0.5); /* Original border color on hover */
         }
 
@@ -709,6 +709,7 @@
         .skill-icon.graphic-design { color: #e74c3c; }
         .skill-icon.ms-excel { color: #27ae60; }
         .skill-icon.html-css { color: #3498db; }
+        .skill-icon.statistical-analysis { color: #ff6b6b; } /* New color for statistical analysis */
 
 
         .skill-card h3 {
@@ -868,6 +869,7 @@
             padding: 1.5rem;
             transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid transparent; /* Ensure a transparent border initially */
+            box-shadow: none; /* Removed shadow */
         }
 
         .timeline_right:hover {
@@ -876,7 +878,7 @@
 
         .timeline_item.visible .timeline_right {
             border: 1px solid #6b48ff; /* Original border on visible */
-            box-shadow: 0 0 20px rgba(107, 72, 255, 0.4); /* Original enhanced shadow on visible */
+            box-shadow: none; /* Removed shadow */
         }
 
         .margin-bottom-xlarge h3 {
@@ -1116,6 +1118,7 @@
         @keyframes twinkle {
             0%, 100% { opacity: 0; transform: scale(0.5); }
             50% { opacity: 0.8; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.5); } /* Ensure it fades out */
         }
 
 
@@ -1796,6 +1799,18 @@
                     </div>
                 </div>
             </div>
+            <!-- New Skill Card: Statistical Analysis -->
+            <div class="skill-card" data-progress="60">
+                <div class="skill-header">
+                    <div class="skill-icon statistical-analysis"><i class="fas fa-chart-line"></i></div>
+                    <h3>Statistical Analysis</h3>
+                </div>
+                <div class="skill-progress">
+                    <div class="progress-bar">
+                        <span class="progress-value">60%</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1862,9 +1877,25 @@
             <div class="timeline_progress">
                 <div class="timeline_progress-bar"></div>
             </div>
+            <!-- New Experience Card -->
             <div class="timeline_item">
                 <div class="timeline_left">
-                    <div class="timeline_date-text">2023 - Present</div>
+                    <div class="timeline_date-text">2024 - 2025</div>
+                </div>
+                <div class="timeline_centre">
+                    <div class="timeline_circle"><i class="fas fa-flask"></i></div>
+                </div>
+                <div class="timeline_right">
+                    <div class="margin-bottom-xlarge">
+                        <h3>Data Scientist Consultant <span style="font-weight: normal; font-size: 1.4rem;">(Internship)</span></h3>
+                        <h4>Rubixe AI</h4>
+                        <div class="timeline_text">Gained practical experience in data science, contributing to AI-driven projects and developing machine learning models.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline_item">
+                <div class="timeline_left">
+                    <div class="timeline_date-text">2023 - 2025</div> <!-- Changed from Present to 2025 -->
                 </div>
                 <div class="timeline_centre">
                     <div class="timeline_circle"><i class="fas fa-briefcase"></i></div>
@@ -1991,17 +2022,26 @@
         }
 
         // Function for number count animation
-        function animateValue(obj, start, end, duration, isFloat = false) {
+        function animateValue(obj, start, end, duration, isFloat = false, appendPlus = false) {
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 let value = start + progress * (end - start);
+                let displayValue;
+
                 if (isFloat) {
-                    obj.innerHTML = value.toFixed(2);
+                    displayValue = value.toFixed(2);
                 } else {
-                    obj.innerHTML = Math.floor(value);
+                    displayValue = Math.floor(value);
                 }
+
+                if (appendPlus) {
+                    obj.innerHTML = `${displayValue}+`;
+                } else {
+                    obj.innerHTML = displayValue;
+                }
+                
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 }
@@ -2116,7 +2156,8 @@
 
                 if (isInViewport(item, item.offsetHeight * 0.5) && !animatedStats.has(id)) {
                     const isFloat = targetValue % 1 !== 0; // Check if it's a float
-                    animateValue(statNumberElement, 0, targetValue, 2000, isFloat); // 2000ms = 2 seconds
+                    // Append plus for all stat numbers
+                    animateValue(statNumberElement, 0, targetValue, 2000, isFloat, true); // Changed to true for appendPlus
                     animatedStats.add(id); // Mark as animated
                 }
             });
@@ -2179,7 +2220,8 @@
 
                 if (isInViewport(item, item.offsetHeight * 0.5) && !animatedStats.has(id)) {
                     const isFloat = targetValue % 1 !== 0;
-                    animateValue(statNumberElement, 0, targetValue, 2000, isFloat);
+                    // Append plus for all stat numbers
+                    animateValue(statNumberElement, 0, targetValue, 2000, isFloat, true); // Changed to true for appendPlus
                     animatedStats.add(id);
                 }
             });
