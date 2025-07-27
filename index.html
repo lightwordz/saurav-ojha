@@ -170,9 +170,8 @@
             color: #333;
         }
 
-        body.light-mode .skill-icon {
-            background: rgba(0, 0, 0, 0.05); /* Subtle background for icons */
-            color: #333; /* Dark icon color */
+        body.light-mode .skill-img-icon { /* Updated for light mode */
+            background: transparent; /* No background in light mode */
         }
 
         body.light-mode .skill-progress {
@@ -259,6 +258,7 @@
         }
 
         body.light-mode .contact-info i {
+            margin-right: 1rem;
             color: #666;
         }
 
@@ -276,6 +276,7 @@
         }
 
         body.light-mode .copyright {
+            font-size: 0.9rem;
             color: #555;
         }
 
@@ -469,11 +470,12 @@
         }
 
         @keyframes words {
-            0%, 20% { content: "Machine Learning Engineer"; }
-            21%, 40% { content: "Data Scientist"; }
-            41%, 60% { content: "AI Developer"; }
-            61%, 80% { content: "Data Analyst"; }
-            81%, 100% { content: "Business Analyst"; }
+            0%, 16% { content: "Machine Learning Engineer"; }
+            17%, 33% { content: "Data Scientist"; }
+            34%, 50% { content: "AI Developer"; }
+            51%, 66% { content: "Data Analyst"; }
+            67%, 83% { content: "Business Analyst"; }
+            84%, 100% { content: "RCM Analyst"; } /* Added RCM Analyst */
         }
 
         /* Unified Background for Sections */
@@ -680,37 +682,23 @@
             margin-bottom: 1.8rem;
         }
 
-        .skill-icon {
-            font-size: 2.2rem;
-            padding: 0.8rem;
+        /* New styles for image icons in skill cards */
+        .skill-img-icon {
+            width: 45px; /* Adjusted size */
+            height: 45px; /* Adjusted size */
+            object-fit: contain;
+            padding: 0.5rem; /* Maintained padding for visual balance */
             border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(107, 72, 255, 0.1); /* Original purple tint */
+            background: transparent; /* Removed background tint */
             transition: transform 0.3s ease;
-            color: #ffffff; /* Original white icon color */
-            box-shadow: none; /* Removed neumorphic shadow */
+            display: flex; /* Added flex for centering */
+            align-items: center; /* Added flex for centering */
+            justify-content: center; /* Added flex for centering */
         }
 
-        .skill-card:hover .skill-icon {
+        .skill-card:hover .skill-img-icon {
             transform: scale(1.08);
-            box-shadow: none; /* Removed neumorphic shadow */
         }
-
-        /* Specific skill icon colors (keep for differentiation) */
-        .skill-icon.python { color: #3776AB; }
-        .skill-icon.powerbi { color: #F2C811; }
-        .skill-icon.sql { color: #00758F; }
-        .skill-icon.ml { color: #A61C3C; }
-        .skill-icon.us-healthcare { color: #2ecc71; }
-        .skill-icon.graphic-design { color: #e74c3c; }
-        .skill-icon.ms-excel { color: #27ae60; }
-        .skill-icon.html-css { color: #3498db; }
-        .skill-icon.statistical-analysis { color: #ff6b6b; } /* New color for statistical analysis */
-
 
         .skill-card h3 {
             font-size: 1.6rem;
@@ -1254,10 +1242,10 @@
                 max-width: unset;
             }
 
-            .skill-icon {
+            .skill-img-icon { /* Adjusted for responsive */
                 width: 40px;
                 height: 40px;
-                font-size: 2rem;
+                padding: 0.4rem;
             }
 
             .skill-card h3 {
@@ -1493,10 +1481,10 @@
                 padding: 1rem;
             }
 
-            .skill-icon {
+            .skill-img-icon { /* Adjusted for responsive */
                 width: 35px;
                 height: 35px;
-                font-size: 1.8rem;
+                padding: 0.3rem;
             }
 
             .skill-card h3 {
@@ -1713,7 +1701,7 @@
         <div class="skills-container">
             <div class="skill-card" data-progress="90">
                 <div class="skill-header">
-                    <div class="skill-icon python"><i class="fab fa-python"></i></div>
+                    <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/python%20(1).png?raw=true" alt="Python Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=Py';">
                     <h3>Python</h3>
                 </div>
                 <div class="skill-progress">
@@ -1724,7 +1712,7 @@
             </div>
             <div class="skill-card" data-progress="80">
                 <div class="skill-header">
-                    <div class="skill-icon powerbi"><i class="fas fa-chart-bar"></i></div>
+                    <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/PowerBI.png?raw=true" alt="Power BI Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=BI';">
                     <h3>Power BI</h3>
                 </div>
                 <div class="skill-progress">
@@ -1735,7 +1723,7 @@
             </div>
             <div class="skill-card" data-progress="90">
                 <div class="skill-header">
-                    <div class="skill-icon sql"><i class="fas fa-database"></i></div>
+                    <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/sql.png?raw=true" alt="SQL Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=SQL';">
                     <h3>SQL</h3>
                 </div>
                 <div class="skill-progress">
@@ -1746,7 +1734,7 @@
             </div>
             <div class="skill-card" data-progress="80">
                 <div class="skill-header">
-                    <div class="skill-icon ml"><i class="fas fa-brain"></i></div>
+                    <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/Machiine.png?raw=true" alt="Machine Learning Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=ML';">
                     <h3>Machine Learning</h3>
                 </div>
                 <div class="skill-progress">
@@ -1757,8 +1745,8 @@
             </div>
             <div class="skill-card" data-progress="80">
                 <div class="skill-header">
-                    <div class="skill-icon us-healthcare"><i class="fas fa-hospital"></i></div>
-                    <h3>US Healthcare</h3>
+                    <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/revenues.png?raw=true" alt="RCM Process Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=US';">
+                    <h3>RCM Process</h3>
                 </div>
                 <div class="skill-progress">
                     <div class="progress-bar">
@@ -1768,7 +1756,7 @@
             </div>
             <div class="skill-card" data-progress="60">
                 <div class="skill-header">
-                    <div class="skill-icon graphic-design"><i class="fas fa-paint-brush"></i></div>
+                    <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/vector.png?raw=true" alt="Graphic Design Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=GD';">
                     <h3>Graphic Design</h3>
                 </div>
                 <div class="skill-progress">
@@ -1779,7 +1767,7 @@
             </div>
             <div class="skill-card" data-progress="90">
                 <div class="skill-header">
-                    <div class="skill-icon ms-excel"><i class="fas fa-file-excel"></i></div>
+                    <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/Excel.png?raw=true" alt="MS Excel Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=XL';">
                     <h3>MS Excel</h3>
                 </div>
                 <div class="skill-progress">
@@ -1790,7 +1778,7 @@
             </div>
             <div class="skill-card" data-progress="40">
                 <div class="skill-header">
-                    <div class="skill-icon html-css"><i class="fas fa-code"></i></div>
+                    <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/html.png?raw=true" alt="HTML & CSS Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=HC';">
                     <h3>HTML & CSS</h3>
                 </div>
                 <div class="skill-progress">
@@ -1799,10 +1787,10 @@
                     </div>
                 </div>
             </div>
-            <!-- New Skill Card: Statistical Analysis -->
+            <!-- Skill Card: Statistical Analysis -->
             <div class="skill-card" data-progress="60">
                 <div class="skill-header">
-                    <div class="skill-icon statistical-analysis"><i class="fas fa-chart-line"></i></div>
+                    <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/statistics.png?raw=true" alt="Statistical Analysis Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=SA';">
                     <h3>Statistical Analysis</h3>
                 </div>
                 <div class="skill-progress">
@@ -2045,7 +2033,7 @@
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 }
-            };
+            }; // Missing closing brace was here
             window.requestAnimationFrame(step);
         }
 
