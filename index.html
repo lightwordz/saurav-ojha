@@ -27,10 +27,16 @@
             scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
 
+        :root {
+            --new-primary-color: #2979ff; /* Requested accent color: Blue */
+            --primary-purple: #8651d9; 
+            --primary-cyan: #00ddeb; 
+        }
+        
         body {
             width: 100%;
             min-height: 100vh;
-            background-color: #0a0a0a; /* Dark background - Neumorphic base */
+            background-color: #0a0a0a; /* Dark background */
             color: white; /* Default text color */
             display: flex;
             flex-direction: column;
@@ -40,14 +46,16 @@
 
         /* Light Theme */
         body.light-mode {
-            background-color: #f0f2f5; /* Light background - Neumorphic base */
+            background-color: #f0f2f5; /* Light background */
             color: #333; /* Dark text color */
             background-image: none; /* Remove noise pattern in light mode */
         }
 
         body.light-mode header.scrolled {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         body.light-mode .fixed-name {
@@ -55,18 +63,21 @@
         }
 
         body.light-mode .fixed-name:hover {
-            color: #4b8bb7;
-            border-bottom-color: #4b8bb7;
+            color: var(--new-primary-color);
+            border-bottom-color: var(--new-primary-color);
         }
 
         body.light-mode nav a {
             color: #333;
         }
-
+        
+        body.light-mode nav a::after {
+             background-color: var(--new-primary-color);
+        }
+        
         body.light-mode nav a:hover,
         body.light-mode nav a.active {
-            color: #4b8bb7;
-            border-bottom-color: #4b8bb7;
+            color: var(--new-primary-color);
         }
 
         body.light-mode .home,
@@ -76,7 +87,7 @@
         body.light-mode .section-timeline,
         body.light-mode .experience,
         body.light-mode .contact {
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white for light mode */
+            background-color: rgba(255, 255, 255, 0.9);
             color: #333;
         }
 
@@ -85,28 +96,28 @@
         }
 
         body.light-mode .social-icons a {
-            background-color: #f0f2f5; /* Light neumorphic base */
+            background-color: #f0f2f5;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
             color: #333;
-            border: none; /* Remove border */
+            border: none; 
         }
 
         body.light-mode .social-icons a:hover {
             box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8);
-            color: #4b8bb7; /* Blue on hover */
+            color: var(--new-primary-color);
             background-color: #f0f2f5;
         }
 
         body.light-mode .btn {
             background-color: #f0f2f5;
             color: #333;
-            border: none; /* Remove border */
+            border: none; 
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
         }
 
         body.light-mode .btn:hover {
             background-color: #f0f2f5;
-            color: #4b8bb7;
+            color: var(--new-primary-color);
             box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8);
         }
 
@@ -116,12 +127,13 @@
 
         body.light-mode .stat-item {
             background: #f0f2f5;
-            border: none;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8); /* Neumorphic shadow */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         body.light-mode .stat-item:hover {
-            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8); /* Pressed effect */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
         body.light-mode .stat-label {
@@ -130,39 +142,33 @@
 
         body.light-mode .project-card {
             background: #f0f2f5;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
-            border: none;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         body.light-mode .project-card:hover {
-            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8);
-            background-color: #f0f2f5;
-        }
-
-        body.light-mode .project-card h3 {
-            color: #333; /* Darker text */
-        }
-
-        body.light-mode .project-card p {
-            color: #666;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background-color: #e8eaed;
         }
 
         body.light-mode .project-link {
-            color: #4b8bb7; /* Blue link */
+            color: var(--new-primary-color);
         }
 
         body.light-mode .project-link:hover {
-            color: #2ecc71; /* Green on hover */
+            color: #1565C0;
         }
-
+        
         body.light-mode .skill-card {
             background: #f0f2f5;
-            border: none;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8); /* Neumorphic shadow */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         body.light-mode .skill-card:hover {
-            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8); /* Pressed effect */
+            transform: translateY(-3px);
+            /* FIX: Removed colored border/shadow on hover in light mode too */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             border-color: transparent;
         }
 
@@ -170,13 +176,13 @@
             color: #333;
         }
 
-        body.light-mode .skill-img-icon { /* Updated for light mode */
-            background: transparent; /* No background in light mode */
+        body.light-mode .skill-img-icon { 
+            background: transparent; 
         }
 
         body.light-mode .skill-progress {
-            border: none;
-            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.05);
         }
 
         body.light-mode .progress-value {
@@ -194,23 +200,23 @@
 
         body.light-mode .timeline_right {
             background: #f0f2f5;
-            border: none;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8); /* Neumorphic shadow */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
         }
 
         body.light-mode .timeline_right:hover {
-            background: #f0f2f5;
+            background: #e8eaed;
         }
 
         body.light-mode .timeline_item.visible .timeline_right {
-            border: none; /* Remove border */
-            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8); /* Pressed effect */
+            border: 1px solid var(--new-primary-color);
+            box-shadow: 0 0 10px rgba(41, 121, 255, 0.2);
         }
 
         body.light-mode .timeline_circle {
-            background: #f0f2f5;
-            color: #333;
-            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1), -3px -3px 7px rgba(255, 255, 255, 0.8);
+            background: var(--new-primary-color);
+            color: #fff;
+            box-shadow: 0 0 10px rgba(41, 121, 255, 0.5);
         }
 
         body.light-mode .timeline_circle:hover {
@@ -232,15 +238,15 @@
         body.light-mode .contact-form,
         body.light-mode .contact-info {
             background: #f0f2f5;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
-            border: none;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         body.light-mode .contact-form input,
         body.light-mode .contact-form textarea {
-            background: #e0e2e5; /* Slightly darker for input fields */
-            border: none;
-            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+            background: #fff;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
             color: #333;
         }
 
@@ -281,12 +287,23 @@
         }
 
         body.light-mode .back-to-top {
+            background-color: var(--new-primary-color);
+            color: #fff;
+            box-shadow: 0 3px 10px rgba(41, 121, 255, 0.4);
+        }
+
+        body.light-mode .back-to-top:hover {
+            box-shadow: 0 5px 15px rgba(41, 121, 255, 0.6);
+            transform: translateY(-3px);
+        }
+
+        body.light-mode .theme-toggle {
             background-color: #f0f2f5;
             color: #333;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.8);
         }
 
-        body.light-mode .back-to-top:hover {
+        body.light-mode .theme-toggle:hover {
             box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.1), inset -3px -3px 7px rgba(255, 255, 255, 0.8);
         }
 
@@ -303,13 +320,21 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s, background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+        }
+        
+        header.header-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Header scrolled state */
         header.scrolled {
-            background-color: rgba(10, 10, 10, 0.9);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background-color: rgba(10, 10, 10, 0.8); /* Slightly dark background */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px); /* Frosted Glass */
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .fixed-name {
@@ -321,24 +346,42 @@
         }
 
         .fixed-name:hover {
-            color: #4b8bb7;
-            border-bottom: 3px solid #4b8bb7;
+            color: var(--new-primary-color);
+            border-bottom: 3px solid var(--new-primary-color);
         }
 
+        /* Navigation Links - Animated Underline */
         nav a {
+            position: relative;
             font-size: 1.8rem;
             color: white;
             margin-left: 4rem;
             font-weight: 500;
-            transition: 0.3s ease;
-            border-bottom: 3px solid #4b8bb7;
+            transition: color 0.3s ease;
+            border-bottom: none; /* Removed static border */
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--new-primary-color); /* Use new accent color */
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
         }
 
         nav a:hover,
         nav a.active {
-            color: #4b8bb7;
-            border-bottom: 3px solid #4b8bb7;
+            color: var(--new-primary-color); /* Only change color, underline is handled by ::after */
         }
+
 
         /* Home Section */
         .home {
@@ -349,6 +392,7 @@
             padding: 8rem 9% 5rem;
             background-color: #010000; /* Solid dark background */
             min-height: 100vh;
+            position: relative;
         }
 
         .home-content {
@@ -359,7 +403,7 @@
 
         .home-content h1 {
             font-size: 4rem;
-            font-weight: 700;
+            font-weight: 800; /* Bolder Typography */
             line-height: 1.3;
         }
 
@@ -389,26 +433,43 @@
             transform: scale(1.05);
         }
 
+        /* Expert Feature: Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            font-size: 2.5rem;
+            color: var(--new-primary-color);
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-10px) translateX(-50%);}
+            60% {transform: translateY(-5px) translateX(-50%);}
+        }
+
         .social-icons a {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 3.5rem; /* Original size */
-            height: 3.5rem; /* Original size */
-            background-color: transparent;
-            border: 0.2rem solid #ffffff; /* Original border */
+            width: 3.5rem; 
+            height: 3.5rem; 
             font-size: 1.8rem;
-            border-radius: 50%;
-            margin: 2.5rem 1rem 2.5rem 0;
+            border: 0.2rem solid #ffffff;
+            margin: 3rem 1.5rem 3rem 0;
             transition: 0.3s ease;
             color: #ffffff;
         }
 
         .social-icons a:hover {
             color: black;
-            transform: scale(1.2) translateY(-3px);
+            transform: scale(1.3) translateY(-5px);
             background-color: #ffffff;
-            box-shadow: 0 0 20px #ffffff; /* Original glow */
+            box-shadow: 0 0 25px #ffffff; /* Original glow */
         }
 
         /* Styles for the Download CV button */
@@ -550,13 +611,23 @@
             font-size: 3.8rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
-            background: linear-gradient(45deg, #ff6b6b, #4b8bb7, #69db7c);
+            /* UPDATED: Bluer gradient for numbers */
+            background: linear-gradient(45deg, #00ddeb, #00bcd4, #4766cb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
             display: inline-block;
             animation: gradientShift 5s ease infinite alternate;
+            text-shadow: none; /* FIX: Removed text shadow as requested */
+        }
+
+        /* Asterisk for Ongoing CGPA */
+        .stat-label-ongoing {
+            font-size: 1.2rem;
+            color: var(--new-primary-color);
+            vertical-align: super;
+            margin-left: 0.3rem;
         }
 
         @keyframes gradientShift {
@@ -580,28 +651,33 @@
             padding: 2rem;
         }
 
+        .project-card { /* Removed .project-more-card from selector */
+            min-height: 230px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
         .project-card {
             background: rgba(255, 255, 255, 0.05); /* Original transparent background */
-            border-radius: 12px;
             padding: 1.8rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            min-height: 230px;
             box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2); /* Original shadow */
             border: 2px solid transparent; /* Original border */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
             overflow: hidden;
         }
 
         .project-card:hover {
             transform: translateY(-8px); /* Original lift */
             box-shadow: 0 8px 25px rgba(75, 139, 183, 0.2),
-                        0 0 0 2px #7038c9; /* Original glow */
+                        0 0 0 2px var(--primary-purple); /* Original glow */
             background-color: rgba(255, 255, 255, 0.08); /* Original transparent background on hover */
         }
+
+        /* Removed .project-more-card specific styling */
 
         /* Style for image icons in project cards */
         .project-image-icon {
@@ -610,6 +686,7 @@
             object-fit: contain;
             margin-bottom: 1.2rem;
             transition: transform 0.3s ease;
+            border-radius: 50%; /* Added circular icon fix */
         }
 
         .project-card:hover .project-image-icon {
@@ -627,7 +704,7 @@
 
         .project-card h3 {
             font-size: 1.6rem;
-            color: #8651d9; /* Original purple */
+            color: var(--primary-purple); /* Original purple */
             margin-bottom: 0.8rem;
         }
 
@@ -639,7 +716,7 @@
 
         .project-link {
             font-size: 1.1rem;
-            color: #8651d9; /* Original purple */
+            color: var(--primary-purple); /* Original purple */
             font-weight: 600;
             transition: color 0.3s ease;
         }
@@ -652,42 +729,52 @@
         /* Skills Section */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2.5rem;
-            max-width: 1100px;
+            /* FIX: Adjusted minmax for robust layout */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem; /* Original gap */
+            max-width: 1200px; /* Original max width */
             margin: 0 auto;
-            padding: 3.5rem 2rem;
+            padding: 4rem 2rem; /* Original padding */
         }
 
         .skill-card {
             background: rgba(255, 255, 255, 0.05); /* Original transparent background */
             border-radius: 12px;
-            padding: 2rem;
+            padding: 2.5rem; /* Original padding */
             text-align: left;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1); /* Original border */
-            box-shadow: none; /* Removed shadow */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Original shadow */
+            min-width: unset; /* Revert min-width override */
         }
 
         .skill-card:hover {
-            transform: translateY(-4px); /* Original lift */
-            box-shadow: none; /* Removed shadow */
-            border-color: rgba(255, 215, 0, 0.5); /* Original border color on hover */
+            transform: translateY(-5px); /* Original lift */
+            box-shadow: 0 8px 25px rgba(107, 72, 255, 0.3); /* Original shadow on hover */
+            /* FIX: Removed colored border on hover as requested */
+            border-color: rgba(255, 215, 0, 0.5); 
+            border-color: transparent; 
+        }
+        
+        /* Override hover for cleaner look as requested */
+        .skill-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Neutral shadow */
+            border-color: transparent;
         }
 
         .skill-header {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
-            margin-bottom: 1.8rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         /* New styles for image icons in skill cards */
         .skill-img-icon {
-            width: 45px; /* Adjusted size */
-            height: 45px; /* Adjusted size */
+            width: 50px; /* Revert size to match original project/skill icons */
+            height: 50px; /* Revert size to match original project/skill icons */
             object-fit: contain;
-            padding: 0.5rem; /* Maintained padding for visual balance */
+            padding: 1rem; /* Revert padding for alignment */
             border-radius: 50%;
             background: transparent; /* Removed background tint */
             transition: transform 0.3s ease;
@@ -701,16 +788,16 @@
         }
 
         .skill-card h3 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: #ffffff;
             font-weight: 500;
         }
 
         .skill-progress {
             width: 100%;
-            height: 22px;
+            height: 25px; /* Original height */
             border: 1px solid rgba(255, 255, 255, 0.3); /* Original border */
-            border-radius: 11px;
+            border-radius: 12px; /* Original radius */
             padding: 2px;
             background: rgba(255, 255, 255, 0.05); /* Original transparent background */
             overflow: hidden;
@@ -718,13 +805,14 @@
             box-shadow: none; /* Removed neumorphic shadow */
         }
 
+        /* RESTORED GOLDEN PROGRESS BAR */
         .progress-bar {
             width: 0;
             height: 100%;
-            background: linear-gradient(90deg, gold, #c85, gold);
+            background: linear-gradient(90deg, gold, #c85, gold); /* Golden Gradient */
             background-size: 200% 100%;
-            border-radius: 9px;
-            box-shadow: 0 0 8px rgba(255, 165, 0, 0.7);
+            border-radius: 10px; /* Original radius */
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.7); /* Golden Shadow */
             transition: width 1.5s ease-out;
             position: relative;
             animation: shine 4s ease-in infinite;
@@ -740,10 +828,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 1.3rem;
+            font-size: 1.4rem; /* Original font size */
             color: #fff;
             font-weight: 600;
-            text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Original text shadow */
             opacity: 0;
             transition: opacity 0.5s ease 0.5s;
         }
@@ -776,15 +864,19 @@
             border-radius: 3px;
         }
 
+        /* FIXED TIMELINE BAR CSS - SMOOTH FILL */
         .timeline_progress-bar {
-            width: 100%;
             background: linear-gradient(to bottom, #6b48ff, #00ddeb); /* Original Purple to Cyan gradient */
             height: 0;
-            transition: height 0.5s ease;
+            /* FIX: Restored transition for smooth scroll fill */
+            transition: height 0.2s linear; /* Changed to linear and faster for immediate scroll response */
             box-shadow: 0 0 15px rgba(107, 72, 255, 0.7); /* Original Purple glow */
             position: absolute;
             top: 0;
+            left: 0;
+            width: 100%;
             border-radius: 3px;
+            z-index: 5;
         }
 
         .timeline_item {
@@ -1081,11 +1173,12 @@
 
         /* Star Background Effect */
         .star-background {
-            position: fixed;
+            /* FIX: Changed to absolute so stars scroll with content, making it immersive */
+            position: absolute; 
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100%; /* Important: needs 100% height to cover all scrolling content */
             pointer-events: none;
             z-index: -1;
             overflow: hidden;
@@ -1127,8 +1220,6 @@
             }
 
             .home {
-                flex-direction: column;
-                text-align: center;
                 padding: 6rem 5% 3rem;
                 gap: 4rem;
             }
@@ -1155,12 +1246,13 @@
             }
 
             .social-icons {
-                margin: 2rem 0;
+                margin: 1.5rem 0;
             }
 
             .social-icons a {
-                width: 3.5rem;
-                height: 3.5rem;
+                /* REVERTED: Back to original smaller size/spacing */
+                width: 3.5rem; 
+                height: 3.5rem; 
                 font-size: 1.8rem;
                 margin: 0 1rem;
             }
@@ -1276,12 +1368,14 @@
                 margin-bottom: 3rem;
             }
 
+            /* EXPERT FIX: Adjust left column on small mobile */
             .timeline_left {
-                width: 100px;
+                width: 90px; /* Adjusted for date visibility */
+                padding-right: 10px;
             }
 
             .timeline_date-text {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
 
             .timeline_right {
@@ -1481,7 +1575,7 @@
                 padding: 1rem;
             }
 
-            .skill-img-icon { /* Adjusted for responsive */
+            .skill-img-icon {
                 width: 35px;
                 height: 35px;
                 padding: 0.3rem;
@@ -1580,7 +1674,7 @@
                 height: 4rem;
                 font-size: 1.8rem;
                 bottom: 1rem;
-                right: 1rem;
+                right: 1.rem;
             }
 
             .theme-toggle {
@@ -1596,6 +1690,25 @@
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             .home-img img {
                 image-rendering: crisp-edges;
+            }
+        }
+
+        /* --- Custom Desktop Skill Fixes (769px and up) --- */
+        @media (min-width: 769px) {
+            .skills-container {
+                max-width: 1000px;
+                padding: 4rem 4rem;
+                display: grid; 
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                margin: 0 auto;
+            }
+
+            .skill-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%; 
             }
         }
     </style>
@@ -1626,14 +1739,19 @@
             <p>A passionate data analyst with expertise in Python, Power BI, SQL, and Machine Learning. I love turning data into actionable insights.</p>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/sauravojha/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/lightwordz" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/Eecosz" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
-            <a href="#" class="btn">Download CV</a>
+            <a href="https://docs.google.com/document/d/1K2HlRnaRjNAMmFCYxd1MGS2vda02JZ7h/export?format=pdf" class="btn" target="_blank">Download CV</a>
         </div>
         <div class="home-img">
             <img src="https://github.com/Eeeeco/Portfolio/blob/main/Mee.png?raw=true" alt="Profile Picture" onerror="this.onerror=null;this.src='https://placehold.co/250x250/4B8BB7/FFFFFF?text=Profile';" />
         </div>
+        
+        <!-- Expert Feature: Scroll Indicator -->
+        <a href="#about" class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <!-- New About Me Section -->
@@ -1647,11 +1765,11 @@
                     <div class="stat-label">Years of Experience</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="6.82">0.00</div>
-                    <div class="stat-label">CGPA (MBA)</div>
+                    <div class="stat-number" data-target="7.2">0.00</div> <!-- Updated target to 7.2 -->
+                    <div class="stat-label">CGPA (MBA)<span class="stat-label-ongoing">*Ongoing</span></div> <!-- Added Ongoing label -->
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-number" data-target="8">0</div> <!-- Updated target to 8 (6 + 2 new projects) -->
                     <div class="stat-label">Projects Completed</div>
                 </div>
             </div>
@@ -1666,7 +1784,7 @@
                 <div class="project-content">
                     <h3>Heart Disease Prediction</h3>
                     <p>Analyzed patient data to identify trends and improve healthcare outcomes.</p>
-                    <a href="https://github.com/yourusername" target="_blank" class="project-link">View Project</a>
+                    <a href="https://github.com/lightwordz/INX_Employee_Performance" target="_blank" class="project-link">View Project</a>
                 </div>
             </div>
             <div class="project-card">
@@ -1674,23 +1792,43 @@
                 <div class="project-content">
                     <h3>Insurance Claims Prediction</h3>
                     <p>Developed a model to predict insurance claim likelihood.</p>
-                    <a href="https://github.com/yourusername" target="_blank" class="project-link">View Project</a>
+                    <a href="https://github.com/lightwordz/INX_Employee_Performance" target="_blank" class="project-link">View Project</a>
                 </div>
             </div>
+            <!-- RESTORED CARD 3: BIKE RENTAL ANALYSIS -->
             <div class="project-card">
                 <img src="https://github.com/Eeeeco/Portfolio/blob/main/bike.png?raw=true" alt="Bike Rental Icon" class="project-image-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/4B8BB7/FFFFFF?text=Icon';">
                 <div class="project-content">
                     <h3>Bike Rental Analysis</h3>
                     <p>Analyzed bike rental data to optimize inventory and pricing.</p>
-                    <a href="https://github.com/yourusername" target="_blank" class="project-link">View Project</a>
+                    <a href="https://github.com/lightwordz/INX_Employee_Performance" target="_blank" class="project-link">View Project</a>
                 </div>
             </div>
+            <!-- CORRECTED CARD 4: SINGLE HOUSE PRICE PREDICTION WITH NEW ICON -->
             <div class="project-card">
-                <img src="https://github.com/Eeeeco/Portfolio/blob/main/home.png?raw=true" alt="House Price Icon" class="project-image-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/4B8BB7/FFFFFF?text=Icon';">
+                <img src="https://github.com/Eeeeco/Portfolio/blob/main/house.png?raw=true" alt="House Price Icon" class="project-image-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/4B8BB7/FFFFFF?text=Icon';">
                 <div class="project-content">
                     <h3>House Price Prediction</h3>
                     <p>Built a machine learning model to predict house prices based on various features.</p>
-                    <a href="https://github.com/yourusername" target="_blank" class="project-link">View Project</a>
+                    <a href="https://github.com/lightwordz/INX_Employee_Performance" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            <!-- NEW PROJECT 1: CHURN RATE PREDICTION -->
+            <div class="project-card">
+                <img src="https://github.com/Eeeeco/Portfolio/blob/main/Churn.png?raw=true" alt="Churn Rate Prediction Icon" class="project-image-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/FFD700/000000?text=Churn';">
+                <div class="project-content">
+                    <h3>Churn Rate Prediction</h3>
+                    <p>Implemented predictive models to identify high-risk customers, leading to proactive retention strategies.</p>
+                    <a href="https://github.com/lightwordz/INX_Employee_Performance" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            <!-- NEW PROJECT 2: EMPLOYEE PERFORMANCE PREDICTION -->
+            <div class="project-card">
+                <img src="https://github.com/Eeeeco/Portfolio/blob/main/emp.png?raw=true" alt="Employee Performance Icon" class="project-image-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/6A5ACD/FFFFFF?text=Perf';">
+                <div class="project-content">
+                    <h3>Employee Performance Prediction</h3>
+                    <p>Analyzed HR data to forecast employee performance and identify key factors influencing productivity.</p>
+                    <a href="https://github.com/lightwordz/INX_Employee_Performance" target="_blank" class="project-link">View Project</a>
                 </div>
             </div>
         </div>
@@ -1725,7 +1863,7 @@
                 <div class="skill-header">
                     <img src="https://github.com/Eeeeco/Portfolio/blob/main/Asset/sql.png?raw=true" alt="SQL Icon" class="skill-img-icon" onerror="this.onerror=null;this.src='https://placehold.co/45x45/6B48FF/FFFFFF?text=SQL';">
                     <h3>SQL</h3>
-                </div>
+                </div> <!-- Corrected HTML tag -->
                 <div class="skill-progress">
                     <div class="progress-bar">
                         <span class="progress-value">90%</span>
@@ -1810,7 +1948,7 @@
             </div>
             <div class="timeline_item">
                 <div class="timeline_left">
-                    <div class="timeline_date-text">2021 - 2023</div>
+                    <div class="timeline_date-text">2025 - 2027</div> <!-- Updated -->
                 </div>
                 <div class="timeline_centre">
                     <div class="timeline_circle"><i class="fas fa-graduation-cap"></i></div>
@@ -1826,7 +1964,7 @@
             </div>
             <div class="timeline_item">
                 <div class="timeline_left">
-                    <div class="timeline_date-text">2017 - 2020</div>
+                    <div class="timeline_date-text">2019 - 2023</div> <!-- Updated -->
                 </div>
                 <div class="timeline_centre">
                     <div class="timeline_circle"><i class="fas fa-school"></i></div>
@@ -1842,7 +1980,7 @@
             </div>
             <div class="timeline_item">
                 <div class="timeline_left">
-                    <div class="timeline_date-text">2015 - 2017</div>
+                    <div class="timeline_date-text">2017 - 2019</div> <!-- Updated -->
                 </div>
                 <div class="timeline_centre">
                     <div class="timeline_circle"><i class="fas fa-school"></i></div>
@@ -1868,6 +2006,22 @@
             <!-- New Experience Card -->
             <div class="timeline_item">
                 <div class="timeline_left">
+                    <div class="timeline_date-text">2023 - 2026</div> <!-- Updated -->
+                </div>
+                <div class="timeline_centre">
+                    <div class="timeline_circle"><i class="fas fa-briefcase"></i></div>
+                </div>
+                <div class="timeline_right">
+                    <div class="margin-bottom-xlarge">
+                        <h3>Senior Executive</h3>
+                        <h4>Access Healthcare</h4> <!-- Changed from Pacific Global to Access Healthcare -->
+                        <div class="timeline_text">Leveraged analytical skills to interpret complex data, identify trends, and provide actionable insights within the healthcare revenue cycle.</div>
+                    </div>
+                    <!-- Removed timeline_image-wrapper as per request -->
+                </div>
+            </div>
+            <div class="timeline_item">
+                <div class="timeline_left">
                     <div class="timeline_date-text">2024 - 2025</div>
                 </div>
                 <div class="timeline_centre">
@@ -1879,22 +2033,6 @@
                         <h4>Rubixe AI</h4>
                         <div class="timeline_text">Gained practical experience in data science, contributing to AI-driven projects and developing machine learning models.</div>
                     </div>
-                </div>
-            </div>
-            <div class="timeline_item">
-                <div class="timeline_left">
-                    <div class="timeline_date-text">2023 - 2025</div> <!-- Changed from Present to 2025 -->
-                </div>
-                <div class="timeline_centre">
-                    <div class="timeline_circle"><i class="fas fa-briefcase"></i></div>
-                </div>
-                <div class="timeline_right">
-                    <div class="margin-bottom-xlarge">
-                        <h3>Senior Executive</h3>
-                        <h4>Pacific Global</h4>
-                        <div class="timeline_text">Leveraged analytical skills to interpret complex data, identify trends, and provide actionable insights within the healthcare revenue cycle.</div>
-                    </div>
-                    <!-- Removed timeline_image-wrapper as per request -->
                 </div>
             </div>
             <div class="timeline_item">
@@ -1953,7 +2091,7 @@
         <div class="contact-container">
             <div class="contact-content">
                 <div class="contact-form">
-                    <form id="contactForm" action="#" method="post">
+                    <form id="contactForm" action="https://formspree.io/f/myzlobjz" method="post">
                         <div class="form-row">
                             <input type="text" name="name" placeholder="Your Name" required>
                             <input type="email" name="email" placeholder="Your Email" required>
@@ -1966,15 +2104,15 @@
                 <div class="contact-info">
                     <h3>Contact Information</h3>
                     <p><i class="fas fa-envelope"></i> sauravojha124@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
+                    <p><i class="fas fa-phone"></i> 882xxxxx74</p>
                     <p><i class="fas fa-map-marker-alt"></i> Noida, India</p>
                 </div>
                 <div class="social-links-container">
                     <h2>Social Links</h2>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/sauravojha/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/lightwordz" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/Eecosz" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -1998,13 +2136,19 @@
     </div>
 
     <script>
+        // Constants for better maintenance
+        const SCROLL_OFFSET = 100;
+        const HEADER_SCROLL_HEIGHT = 50;
+        const ANIMATION_DURATION = 500; // UPDATED: Changed from 1000ms to 500ms for faster, smoother counting
+
         // Function to check if an element is in viewport
         function isInViewport(element, offset = 0) {
             const rect = element.getBoundingClientRect();
+            // Check if top edge is visible, bottom edge is visible, and it's within horizontal bounds
             return (
                 rect.top <= (window.innerHeight || document.documentElement.clientHeight) - offset &&
-                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
                 rect.bottom >= offset &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth) &&
                 rect.right >= 0
             );
         }
@@ -2019,12 +2163,13 @@
                 let displayValue;
 
                 if (isFloat) {
+                    // Fix for CGPA: ensure correct decimal display
                     displayValue = value.toFixed(2);
                 } else {
                     displayValue = Math.floor(value);
                 }
 
-                if (appendPlus) {
+                if (appendPlus && !isFloat) { // Only append '+' for integers (Years/Projects)
                     obj.innerHTML = `${displayValue}+`;
                 } else {
                     obj.innerHTML = displayValue;
@@ -2033,7 +2178,7 @@
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
                 }
-            }; // Missing closing brace was here
+            };
             window.requestAnimationFrame(step);
         }
 
@@ -2059,10 +2204,10 @@
             }
         }
 
-        window.addEventListener('scroll', () => {
+        function handleScrollAnimations() {
             // Header (navigation) fade effect - now sticky with background change
             const header = document.querySelector('header');
-            if (window.scrollY > 50) { // Add 'scrolled' class after scrolling 50px
+            if (window.scrollY > HEADER_SCROLL_HEIGHT) { 
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -2070,26 +2215,29 @@
 
             // Back to Top button visibility
             const backToTopBtn = document.getElementById('backToTopBtn');
-            if (window.scrollY > window.innerHeight * 0.5) { // Show after scrolling half of viewport height
+            if (window.scrollY > window.innerHeight * 0.5) { 
                 backToTopBtn.classList.add('show');
             } else {
                 backToTopBtn.classList.remove('show');
             }
 
-            // Timeline Progress Bar Animation
+            // Timeline Progress Bar Animation (FIXED LOGIC)
             const timelineComponents = document.querySelectorAll('.timeline_component');
             timelineComponents.forEach(component => {
-                const componentTop = component.getBoundingClientRect().top;
                 const componentHeight = component.offsetHeight;
                 const viewportHeight = window.innerHeight;
-
                 let progress = 0;
-                // Calculate progress based on how much of the component is in view
-                if (componentTop < viewportHeight && componentTop + componentHeight > 0) {
-                    const scrolledDistance = viewportHeight - componentTop;
-                    progress = Math.min((scrolledDistance / componentHeight) * 100, 100);
-                }
-                progress = Math.max(progress, 0); // Ensure progress is not negative
+
+                // Position of the timeline start relative to the document
+                const componentOffsetTop = component.offsetTop; 
+                
+                // Calculate where the center of the viewport is relative to the start of the component
+                // This drives the smooth, scrolling fill effect.
+                // We use window.innerHeight / 2 to trigger the animation roughly when the component crosses the screen center.
+                let scrolledDistance = window.scrollY + (viewportHeight / 2) - componentOffsetTop; 
+
+                // Clamp the progress between 0% (before element) and 100% (after element)
+                progress = Math.min(Math.max((scrolledDistance / componentHeight) * 100, 0), 100);
 
                 component.querySelector('.timeline_progress-bar').style.height = `${progress}%`;
 
@@ -2099,9 +2247,6 @@
                     // Make items visible when they are within 80% of the viewport height
                     if (isInViewport(item, item.offsetHeight * 0.2)) { // Offset to trigger animation slightly before fully in view
                         item.classList.add('visible');
-                    } else {
-                        // Optionally remove 'visible' class if you want them to re-animate on scroll back up
-                        // item.classList.remove('visible');
                     }
                 });
             });
@@ -2116,22 +2261,15 @@
                 if (isInViewport(card, card.offsetHeight * 0.2) && !progressBar.classList.contains('animated')) {
                     progressBar.style.width = `${progressValue}%`;
                     progressBar.classList.add('animated');
-                } else if (!isInViewport(card) && progressBar.classList.contains('animated')) {
-                    // Optional: Reset animation if scrolled out of view
-                    // progressBar.style.width = `0%`;
-                    // progressBar.classList.remove('animated');
                 }
             });
 
             // Section Title Animation
-            const sectionTitles = document.querySelectorAll('.section-title');
+            const sectionTitles = document.querySelectorAll('section:not(#home) .section-title'); // Exclude home title
             sectionTitles.forEach(title => {
                 // Animate section titles when they enter the viewport
                 if (isInViewport(title, title.offsetHeight * 0.5) && !title.classList.contains('animated')) {
                     title.classList.add('animated');
-                } else if (!isInViewport(title) && title.classList.contains('animated')) {
-                    // Optional: Reset animation if scrolled out of view
-                    // title.classList.remove('animated');
                 }
             });
 
@@ -2139,14 +2277,18 @@
             const statItems = document.querySelectorAll('.stat-item');
             statItems.forEach(item => {
                 const statNumberElement = item.querySelector('.stat-number');
+                const statLabelElement = item.querySelector('.stat-label'); 
                 const targetValue = parseFloat(statNumberElement.getAttribute('data-target'));
-                const id = item.id || statNumberElement.id || `stat-${targetValue}`; // Unique ID for tracking
+                const id = item.id || statNumberElement.id || `stat-${targetValue}`; 
 
                 if (isInViewport(item, item.offsetHeight * 0.5) && !animatedStats.has(id)) {
-                    const isFloat = targetValue % 1 !== 0; // Check if it's a float
-                    // Append plus for all stat numbers
-                    animateValue(statNumberElement, 0, targetValue, 2000, isFloat, true); // Changed to true for appendPlus
-                    animatedStats.add(id); // Mark as animated
+                    const isFloat = targetValue % 1 !== 0; 
+                    
+                    // FIX: Determine if '+' should be appended. Only Years and Projects should have it.
+                    const appendPlus = !statLabelElement.textContent.includes('CGPA');
+
+                    animateValue(statNumberElement, 0, targetValue, ANIMATION_DURATION, isFloat, appendPlus); 
+                    animatedStats.add(id);
                 }
             });
 
@@ -2158,10 +2300,8 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                // Adjust this offset based on your header height or desired scroll point
-                const offset = 100;
 
-                if (window.pageYOffset >= sectionTop - offset && window.pageYOffset < sectionTop + sectionHeight - offset) {
+                if (window.pageYOffset >= sectionTop - SCROLL_OFFSET && window.pageYOffset < sectionTop + sectionHeight - SCROLL_OFFSET) {
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                         if (link.getAttribute('href') === '#' + section.id) {
@@ -2170,57 +2310,19 @@
                     });
                 }
             });
-        });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimations);
 
         // Initial check on load for elements already in view
         window.addEventListener('load', () => {
-            // Apply scrolled class to header if page loaded not at top
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            }
+            // New: Header Fade-Down Effect
+            setTimeout(() => {
+                document.querySelector('header').classList.add('header-visible');
+            }, 100); // Wait 100ms then slide down
 
-            document.querySelectorAll('.section-title').forEach(title => {
-                if (isInViewport(title, title.offsetHeight * 0.5)) {
-                    title.classList.add('animated');
-                }
-            });
-            document.querySelectorAll('.skill-card').forEach(card => {
-                const progressBar = card.querySelector('.progress-bar');
-                const progressValue = card.getAttribute('data-progress');
-                if (isInViewport(card, card.offsetHeight * 0.2)) {
-                    progressBar.style.width = `${progressValue}%`;
-                    progressBar.classList.add('animated');
-                }
-            });
-            document.querySelectorAll('.timeline_item').forEach(item => {
-                if (isInViewport(item, item.offsetHeight * 0.2)) {
-                    item.classList.add('visible');
-                }
-            });
-
-            // Initial check for About Me stats on load
-            const statItems = document.querySelectorAll('.stat-item');
-            statItems.forEach(item => {
-                const statNumberElement = item.querySelector('.stat-number');
-                const targetValue = parseFloat(statNumberElement.getAttribute('data-target'));
-                const id = item.id || statNumberElement.id || `stat-${targetValue}`;
-
-                if (isInViewport(item, item.offsetHeight * 0.5) && !animatedStats.has(id)) {
-                    const isFloat = targetValue % 1 !== 0;
-                    // Append plus for all stat numbers
-                    animateValue(statNumberElement, 0, targetValue, 2000, isFloat, true); // Changed to true for appendPlus
-                    animatedStats.add(id);
-                }
-            });
-
-            // Back to Top button initial visibility
-            const backToTopBtn = document.getElementById('backToTopBtn');
-            if (window.scrollY > window.innerHeight * 0.5) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
+            // Run the initial animation checks immediately after load
+            handleScrollAnimations(); 
 
             // Generate stars on load
             generateStars();
@@ -2228,31 +2330,52 @@
 
         // Contact Form Submission (Simulated)
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            // NOTE: Formspree handles the actual submission. This simulation is now JUST for the on-page message.
+            event.preventDefault(); 
 
+            const form = this;
             const formMessage = document.getElementById('form-message');
-            formMessage.style.color = 'white'; // Default color for messages
-            formMessage.textContent = 'Sending message...'; // Show loading message
+            formMessage.style.color = 'white'; 
+            formMessage.textContent = 'Sending message...'; 
 
-            // Simulate API call delay
-            setTimeout(() => {
-                const isSuccess = Math.random() > 0.2; // 80% chance of success
+            // Use the actual fetch API to submit to Formspree, as required by their service.
+            const data = new FormData(form);
 
-                if (isSuccess) {
-                    formMessage.textContent = 'Message sent successfully! Thank you.';
-                    formMessage.style.color = '#69db7c'; // Green for success
-                    this.reset(); // Clear form fields on success
-                } else {
-                    formMessage.textContent = 'Failed to send message. Please try again later.';
-                    formMessage.style.color = '#ff6b6b'; // Red for error
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
                 }
-
+            })
+            .then(response => {
+                if (response.ok) {
+                    formMessage.textContent = 'Message sent successfully! Thank you.';
+                    formMessage.style.color = '#69db7c'; 
+                    form.reset(); 
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            formMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            formMessage.textContent = 'Oops! There was an issue sending your message.';
+                        }
+                    })
+                }
+                
                 // Clear message after 5 seconds
                 setTimeout(() => {
                     formMessage.textContent = '';
                 }, 5000);
 
-            }, 1500); // Simulate 1.5 second network request
+            })
+            .catch(error => {
+                formMessage.textContent = 'Failed to connect. Please check your network.';
+                formMessage.style.color = '#ff6b6b'; 
+                setTimeout(() => {
+                    formMessage.textContent = '';
+                }, 5000);
+            });
         });
 
         // Theme Toggle Functionality
